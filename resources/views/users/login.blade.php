@@ -18,7 +18,7 @@
             </div>
         </div>
     @endif
-    <div class="row align-items-center g-lg-5 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
         <div class="col-lg-7 text-center text-lg-start">
             <h1 class="display-4 fw-thin lh-1 mb-5">
                 Login
@@ -26,6 +26,7 @@
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 text-black-50 bg-light" method="post" action="/login">
+                @csrf
                 <div class="form-floating mb-3">
                     <input name="user" type="text" class="form-control" id="user" placeholder="id">
                     <label for="user"> User </label>
