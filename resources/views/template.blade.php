@@ -10,58 +10,53 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row">
-        <div class="alert alert-danger" role="alert">
-            A simple primary alert—check it out!
-        </div>
-    </div>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5 font-monospace">
     <div class="row align-items-center g-lg-5 py-5">
         <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 mb-3">Login</h1>
-            <p class="col-lg-10 fs-4">by <a target="_blank" href="https://www.programmerzamannow.com/">Programmer Zaman
-                    Now</a></p>
+            <h1 class="display-4 fw-thin lh-1 mb-5">
+                Login
+            </h1>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/login">
+            <form class="p-4 p-md-5 border rounded-3 text-black-50 bg-light" method="post" action="/login">
                 <div class="form-floating mb-3">
                     <input name="user" type="text" class="form-control" id="user" placeholder="id">
-                    <label for="user">User</label>
+                    <label for="user"> User </label>
                 </div>
                 <div class="form-floating mb-3">
                     <input name="password" type="password" class="form-control" id="password" placeholder="password">
-                    <label for="password">Password</label>
+                    <label for="password"> Password </label>
                 </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">
+                    Sign In
+                </button>
             </form>
         </div>
     </div>
 </div>
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-
-    <div class="row">
-        <div class="alert alert-danger" role="alert">
-            A simple primary alert—check it out!
-        </div>
-    </div>
-    <div class="row">
+    <div class="d-flex align-items-center justify-content-center">
         <form method="post" action="/logout">
-            <button class="w-15 btn btn-lg btn-danger" type="submit">Sign Out</button>
+            <button class="w-100 btn btn-lg btn-danger px-5 py-2" type="submit">
+                Sign Out
+            </button>
         </form>
     </div>
     <div class="row align-items-center g-lg-5 py-5">
         <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 mb-3">Todolist</h1>
-            <p class="col-lg-10 fs-4">by <a target="_blank" href="https://www.programmerzamannow.com/">Programmer Zaman
-                    Now</a></p>
+            <h1 class="display-4 fw-light lh-1 my-5">
+                To-Do List
+            </h1>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/todolist">
-                <div class="form-floating mb-3">
+                <div class="form-floating mb-3 text-black-50">
                     <input type="text" class="form-control" name="todo" placeholder="todo">
-                    <label for="todo">Todo</label>
+                    <label for="todo"> To Do </label>
                 </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Add Todo</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">
+                    Add a Task
+                </button>
             </form>
         </div>
     </div>
@@ -73,17 +68,23 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Todo</th>
+                    <th scope="col"> # </th>
+                    <th scope="col"> Tasks </th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Belajar Laravel Dasar</td>
+                    <th scope="row">
+                        1
+                    </th>
                     <td>
-                        <button class="w-100 btn btn-lg btn-danger" type="submit">Remove</button>
+                        PWeb Midterm - IF IUP 2022/2023
+                    </td>
+                    <td>
+                        <button class="w-100 btn btn-lg btn-outline-danger" type="submit">
+                            Remove
+                        </button>
                     </td>
                 </tr>
                 </tbody>
