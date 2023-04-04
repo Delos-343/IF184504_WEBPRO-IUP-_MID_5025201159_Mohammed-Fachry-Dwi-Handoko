@@ -22,8 +22,8 @@ class UserController extends Controller
     public function login(): Response
     {
         return response()
-            ->view("user.login", [
-                "title" => "Login"
+            ->view("users.login", [
+                "title" => "Login | To-Do List App"
             ]);
     }
 
@@ -34,8 +34,8 @@ class UserController extends Controller
 
         // validate input
         if (empty($user) || empty($password)) {
-            return response()->view("user.login", [
-                "title" => "Login",
+            return response()->view("users.login", [
+                "title" => "Login | To-Do List App",
                 "error" => "User or password is required"
             ]);
         }
@@ -45,8 +45,8 @@ class UserController extends Controller
             return redirect("/");
         }
 
-        return response()->view("user.login", [
-            "title" => "Login",
+        return response()->view("users.login", [
+            "title" => "Login | To-Do List App",
             "error" => "User or password is wrong"
         ]);
     }
