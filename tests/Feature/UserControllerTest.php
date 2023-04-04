@@ -8,13 +8,66 @@ use Tests\TestCase;
 
 class UserControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
+    public function testLoginPage()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $this->get('/login')
+            ->assertSeeText("Login");
     }
+
+    public function testLoginPageForMember()
+    {
+        $this->withSession([
+            "user" => "khannedy"
+        ])->get('/login')
+            ->assertRedirect("/");
+    }
+
+    public function testLoginSuccess()
+    {
+        $this->post('/login', [
+            "user" => "khannedy",
+            "password" => "rahasia"
+        ])->assertRedirect("/")
+            ->assertSessionHas("user", "khannedy");
+    }
+
+    public function testLoginForUserAlreadyLogin()
+    {
+        $this->withSession([
+            "user" => "khannedy"
+        ])->post('/login', [
+            "user" => "khannedy",
+            "password" => "rahasia"
+        ])->assertRedirect("/");
+    }
+
+    public function testLoginValidationError()
+    {
+        $this->post("/login", [])
+            ->assertSeeText("User or password is required");
+    }
+
+    public function testLoginFailed()
+    {
+        $this->post('/login', [
+            'user' => "wrong",
+            "password" => "wrong"
+        ])->assertSeeText("User or password is wrong");
+    }
+
+    public function testLogout()
+    {
+        $this->withSession([
+            "user" => "khannedy"
+        ])->post('/logout')
+            ->assertRedirect("/")
+            ->assertSessionMissing("user");
+    }
+
+    public function testLogoutGuest()
+    {
+        $this->post('/logout')
+            ->assertRedirect("/");
+    }
+
 }
