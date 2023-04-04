@@ -17,7 +17,7 @@ class HomeControllerTest extends TestCase
     public function testMember()
     {
         $this->withSession([
-            "user" => "khannedy"
+            "user" => "Fachry"
         ])->get('/')
             ->assertRedirect("/todolist");
     }
