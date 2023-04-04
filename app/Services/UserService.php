@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Services\Impl;
+namespace App\Services;
 
-use App\Service\UserService;
-
-class UserServiceImpl implements UserService
+interface UserService
 {
-    
+    function login(string $user, string $password): bool;
 }
